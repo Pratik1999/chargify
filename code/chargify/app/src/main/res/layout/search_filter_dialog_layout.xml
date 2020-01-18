@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="163dp"
+        android:layout_height="295dp"
+        android:layout_centerInParent="true"
+        android:background="#fff"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/description_phoneno"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4pt"
+                android:layout_marginBottom="12dp"
+                android:text="SELECT FILTERS"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/filterSlowCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="29dp"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="11dp"
+            android:text="SLOW" />
+
+        <CheckBox
+            android:id="@+id/filterFastCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/filterSlowCheckBox"
+            android:layout_alignStart="@+id/filterSlowCheckBox"
+            android:layout_alignLeft="@+id/filterSlowCheckBox"
+            android:text="FAST" />
+
+        <CheckBox
+            android:id="@+id/filterRapidCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/filterFastCheckBox"
+            android:layout_alignStart="@+id/filterFastCheckBox"
+            android:layout_alignLeft="@+id/filterFastCheckBox"
+            android:text="RAPID" />
+
+        <EditText
+            android:id="@+id/radiusBox"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/filterRapidCheckBox"
+            android:layout_alignStart="@+id/filterRapidCheckBox"
+            android:layout_alignLeft="@+id/filterRapidCheckBox"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/applySearchFilterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/radiusBox"
+            android:layout_alignStart="@+id/radiusBox"
+            android:layout_alignLeft="@+id/radiusBox"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorPrimary"
+            android:padding="3dp"
+            android:text="GO"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

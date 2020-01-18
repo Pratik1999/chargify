@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1091057038236",
+    "firebase_url": "https://chargifyv1.firebaseio.com",
+    "project_id": "chargifyv1",
+    "storage_bucket": "chargifyv1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091057038236:android:4efc236023f1594e2e8e59",
+        "android_client_info": {
+          "package_name": "com.example.pratik.chargify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091057038236-61fdvpammbq2vorfbj6d3vpdg489rauh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pratik.chargify",
+            "certificate_hash": "84d7821b45094cc2cbd8b574bde885ba5f599e3f"
+          }
+        },
+        {
+          "client_id": "1091057038236-pl3oc8oo19elgr67mkf4ckorl0toospr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClaVX3BMj4sAH-8LpFtOqgjLpDlaJgRV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091057038236-pl3oc8oo19elgr67mkf4ckorl0toospr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
