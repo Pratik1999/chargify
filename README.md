@@ -11,19 +11,28 @@ It has been built in response to test the feasibility of the EV ecosystem in Ind
 -- The data gathered from their charging patterns such as preferred charging locations will be used to develop new charging stations in areas seeing high turnout and strengthen the grid to ensure Power Distribution Companies (DISCOMs) can provide  adequate power their 
 with great efficiency.
 
+
 Features of our App:
+
 
 •  It  provides various filters for the type of chargers such as - Fast, Slow &   
    Rapid.
+   
 •  It  has Turn-by-turn navigation inbuilt  in it to provide directions to the user to reach the desirable charging spot.
+
 •  Charging  stations can also be narrowed down by setting a radius of some 'x' kms  so that the user 
 can find the spot at his convenience rather than being only dependent on range.
+
 •  Build your profile and provide reviews and ratings for a particular charging station to enrich the platforms and also receive incentives.
+
 
 Technologies Used:
 
+
 •Our app will be built using Java or Kotlin in the Android Developer Studio. 
+
 • For navigating to the destination, Google Maps Direction API has been implemented.
+
 • All data fields such as distance, spots,. Etc are stored in Firebase  Real-time Database & Firebase cloud.
 
 
