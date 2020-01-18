@@ -172,7 +172,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             dataFireRef.child(itemId).setValue(ps.getCs());
             */
 
-            geoQuery();
             //attachDatabaseReadListener();
 
             //filter Initialisation
@@ -220,12 +219,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
 
 
+            geoQuery();
         }
 
     }
     public void geoQuery()
     {
-        geoQuery = geoFire.queryAtLocation(new GeoLocation(23.18720467677,79.9325403577), filterRadius);
+        geoQuery = geoFire.queryAtLocation(new GeoLocation(userLocation.latitude,userLocation.longitude), filterRadius);
         geoQuery.addGeoQueryEventListener(new GeoQueryEventListener() {
             @Override
             public void onKeyEntered(final String key, final GeoLocation location) {
@@ -519,61 +519,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     //firebase functions
 
-    private void attachDatabaseReadListener() {
-
-        if(childEventListener==null) {
-            childEventListener = new ChildEventListener() {
-                @Override
-                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                    Log.i("Child", "Added");
-                    ParkingSpot parkingSpot=dataSnapshot.getValue(ParkingSpot.class);
-                    parkingSpots.add(parkingSpot);
-                    parkingSpotsMap.put(parkingSpot.getPhone(),parkingSpot);
-                    updateMap();
-
-                }
-
-                @Override
-                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                    Log.i("Child", "changed"+dataSnapshot.toString());
-                    ParkingSpot parkingSpot=dataSnapshot.getValue(ParkingSpot.class);
-                    parkingSpotsMap.remove(parkingSpot.getPhone());
-                    parkingSpotsMap.put(parkingSpot.getPhone(),parkingSpot);
-                    updateMap();
-                }
-
-                @Override
-                public void onChildRemoved(DataSnapshot dataSnapshot) {
-                    Log.i("Child", "removed"+dataSnapshot.toString());
-                    ParkingSpot parkingSpot=dataSnapshot.getValue(ParkingSpot.class);
-                    parkingSpotsMap.remove(parkingSpot.getPhone());
-                    updateMap();
-
-                }
-
-
-                @Override
-                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-            };
-
-            dataBaseReference.orderByChild("pinCode").equalTo("482011").addChildEventListener(childEventListener);
-        }
-
-    }
-
-    private void detachDatabaseReadListener() {
-        if (childEventListener != null) {
-            dataBaseReference.removeEventListener(childEventListener);
-            childEventListener = null;
-        }
-    }
 
     public void markUserLocationMarker()
     {
@@ -581,6 +526,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             userMarker.remove();
         userMarker=mMap.addMarker(new MarkerOptions().position(userLocation).title("You Are here").icon(BitmapDescriptorFactory.fromResource(R.drawable.baseline_person_pin_circle_black_18dp)));
         //mMap.moveCamera(CameraUpdateFactory.newLatLng(userLocation));
+
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 12.0f));
 
     }
@@ -613,6 +559,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void updateLocation(Location location) {
                 Log.i("LocationUpdated", String.valueOf(location.getLatitude()));
                 userLocation = new LatLng(location.getLatitude(), location.getLongitude());
+                geoQuery.setCenter(new GeoLocation(userLocation.latitude,userLocation.longitude));
                 markUserLocationMarker();
             }
         };

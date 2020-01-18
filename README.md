@@ -1,4 +1,4 @@
-Chargify
+chargify
 
 Chargify is an Android app solution which is used to locate nearby charging stations for EVs (Electric Vehicles) depending on the location of the vehicle and range left in it. 
 
@@ -25,6 +25,11 @@ Technologies Used:
 •Our app will be built using Java or Kotlin in the Android Developer Studio. 
 • For navigating to the destination, Google Maps Direction API has been implemented.
 • All data fields such as distance, spots,. Etc are stored in Firebase  Real-time Database & Firebase cloud.
+
+
+
+Milestone 2 Updated
+
 
 
 
