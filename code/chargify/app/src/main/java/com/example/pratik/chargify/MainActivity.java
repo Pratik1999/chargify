@@ -158,8 +158,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
 
-
-            /*ParkingSpot ps=new ParkingSpot(24.18720467677,78.9325403577,5.0,"2222222222","rapid","482011",9,2);
+/*
+            ParkingSpot ps=new ParkingSpot(23.155485, 79.896669,3.8,"9876543215","slow","482001",18,2);
 
             String itemId=dataFireRef.push().getKey();
 
@@ -170,7 +170,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             });
 
             dataFireRef.child(itemId).setValue(ps.getCs());
-            */
+*/
 
             //attachDatabaseReadListener();
 
@@ -237,8 +237,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         ParkingSpot newPSpot= new ParkingSpot(newCSpot,new SpotLocation(location.latitude,location.longitude));
                         if(parkingSpotsMap.containsKey(key))
                             parkingSpotsMap.remove(key);
+                        //else
+                         //   mMap.addMarker(createMarkerOption(newPSpot.getLatitude(),newPSpot.getLongitude(),key,newPSpot.getType()));
                         parkingSpotsMap.put(key,newPSpot);
-                        Log.i("ChamgedData",newCSpot.getPhone());
+                        Log.i("ChangedData",newCSpot.getPhone());
 
                     }
 
@@ -263,6 +265,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onGeoQueryReady() {
                 Log.i("Location", "All initial data has been loaded and events have been fired!");
+
                 updateMap();
             }
 
@@ -424,7 +427,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             if((spot.getType().equals("slow")&&slowFilter)||(spot.getType().equals("fast")&&fastFilter)||(spot.getType().equals("rapid")&&rapidFilter))
             {
                 if(spot.getType().equals("slow"))
-                        mMap.addMarker(new MarkerOptions().position(new LatLng(spot.getLatitude(), spot.getLongitude())).title(mapElement.getKey().toString()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)).snippet("SLOW"));
+                        mMap.addMarker(new MarkerOptions().position(new LatLng(spot.getLatitude(), spot.getLongitude())).title(mapElement.getKey().toString()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
                 else if(spot.getType().equals("fast"))
                         mMap.addMarker(new MarkerOptions().position(new LatLng(spot.getLatitude(), spot.getLongitude())).title(mapElement.getKey().toString()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
                 else
@@ -563,6 +566,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 markUserLocationMarker();
             }
         };
+    }
+    public MarkerOptions createMarkerOption(double latitude, double longitude,String title,String type)
+    {
+        if(type.equals("slow"))
+            return new MarkerOptions().position(new LatLng(latitude,longitude)).title(title).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+        else if(type.equals("fast"))
+            return new MarkerOptions().position(new LatLng(latitude,longitude)).title(title).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+        else
+            return new MarkerOptions().position(new LatLng(latitude,longitude)).title(title).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));
+
+
     }
 
 }

@@ -165,6 +165,7 @@ public class FetchDirections {
 
             br.close();
 
+            Log.i("Direction",data);
         } catch (Exception e) {
             Log.d("Exception", e.toString());
         } finally {

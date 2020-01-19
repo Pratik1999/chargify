@@ -40,5 +40,11 @@ Technologies Used:
 Milestone 2 Updated
 
 
+Final Submission Done which includes:
+*Direction api for getting direction to the desired charging spot
+*Using GeoFire library to get availabe charging spots in a given radius
+
+
+
 
 

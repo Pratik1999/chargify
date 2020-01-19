@@ -20,6 +20,7 @@ public class CustomePopUpDialog extends Dialog {
     Button getDirectionButton;
     String type=null,occupied=null,totalSpace=null,ratings=null,phone=null;
     double latitude,longitude;
+
     public CustomePopUpDialog(@NonNull Context context, ParkingSpot spot) {
         super(context);
         this.context=context;

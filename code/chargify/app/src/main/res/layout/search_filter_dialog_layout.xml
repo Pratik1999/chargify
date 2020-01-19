@@ -5,8 +5,8 @@
 
     <RelativeLayout
         android:id="@+id/relativeLayout1"
-        android:layout_width="163dp"
-        android:layout_height="295dp"
+        android:layout_width="175dp"
+        android:layout_height="260dp"
         android:layout_centerInParent="true"
         android:background="#fff"
         android:orientation="vertical">
@@ -42,9 +42,9 @@
             android:layout_below="@+id/linearLayout"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="29dp"
-            android:layout_marginLeft="29dp"
-            android:layout_marginTop="11dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginLeft="56dp"
+            android:layout_marginTop="5dp"
             android:text="SLOW" />
 
         <CheckBox
@@ -65,14 +65,29 @@
             android:layout_alignLeft="@+id/filterFastCheckBox"
             android:text="RAPID" />
 
-        <EditText
-            android:id="@+id/radiusBox"
-            android:layout_width="100dp"
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/filterRapidCheckBox"
             android:layout_alignStart="@+id/filterRapidCheckBox"
             android:layout_alignLeft="@+id/filterRapidCheckBox"
-            android:layout_marginTop="0dp"
+            android:layout_marginStart="-1dp"
+            android:layout_marginLeft="-1dp"
+            android:layout_marginTop="19dp"
+            android:text="Range" />
+
+        <EditText
+            android:id="@+id/radiusBox"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView5"
+            android:layout_alignStart="@+id/textView5"
+            android:layout_alignLeft="@+id/textView5"
+
+            android:layout_marginStart="37dp"
+            android:layout_marginLeft="37dp"
+            android:layout_marginTop="-32dp"
             android:ems="10"
             android:inputType="number" />
 
@@ -83,7 +98,9 @@
             android:layout_below="@+id/radiusBox"
             android:layout_alignStart="@+id/radiusBox"
             android:layout_alignLeft="@+id/radiusBox"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="-43dp"
+            android:layout_marginLeft="-43dp"
+            android:layout_marginTop="6dp"
             android:background="@color/colorPrimary"
             android:padding="3dp"
             android:text="GO"
